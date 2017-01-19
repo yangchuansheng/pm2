@@ -3,7 +3,7 @@
   "preferGlobal": true,
   "version": "2.3.0-beta1",
   "engines": {
-    "node": ">=0.10"
+    "node": ">=0.12"
   },
   "directories": {
     "bin": "./bin",
@@ -39,6 +39,10 @@
     {
       "name": "tjatse",
       "email": "thisnamemeansnothing@gmail.com"
+    },
+    {
+      "name": "vmarchaud",
+      "email": "contact@vmarchaud.fr"
     }
   ],
   "contributors": [
@@ -189,6 +193,9 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/Unitech/pm2.git"
+  },
+  "semistandard": {
+    "ignore": ["test/", "/lib/tools/", "examples/"]
   },
   "license": "AGPL-3.0"
 }
