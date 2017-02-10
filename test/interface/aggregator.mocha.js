@@ -131,7 +131,7 @@ describe('Transactions Aggregator', function() {
     });
 
     it('should merge as a new variance with the same route', function () {
-      var trace2 = TraceFactory.generateTrace('yoloswag/swag', 3)
+      var trace2 = TraceFactory.generateTrace('yoloswag/swag', 3, 'POST')
       trace2.spans.forEach(function (span) {
         span.min = span.max = span.mean = Math.round(new Date(span.endTime) - new Date(span.startTime));
       })

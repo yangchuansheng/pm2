@@ -21,8 +21,9 @@ function getRandomInt(min, max) {
  * Generate Trace
  * @param {String}  route_path  route name, default to random route name
  * @param {Integer} db_query_nb number of spans, default to random number (0-10)
+ * @param {String} method http method used
  */
-function generateTrace(route_path, db_query_nb) {
+function generateTrace(route_path, db_query_nb, method) {
   if (!db_query_nb)
     db_query_nb = getRandomInt(2, 5);
   if (!route_path)
@@ -40,7 +41,7 @@ function generateTrace(route_path, db_query_nb) {
       "spanId": parentSpanId,
       "kind": "RPC_SERVER",
       "labels": {
-        "http/method": "GET",
+        "http/method": method || 'GET',
         "http/path": route_path,
         "http/url": WEBSITE_ROOT + route_path,
         "http/source/ip": "::ffff:127.0.0.1",
